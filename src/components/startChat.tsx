@@ -17,7 +17,7 @@ export const StartChat = () => {
             placeholder="username"
             required={true}
             />
-            <button type="submit">Submit</button>
+            <button type="submit" class="bg-sky-500">Submit</button>
         </form>
         </div>
     )

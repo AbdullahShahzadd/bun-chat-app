@@ -1,7 +1,5 @@
 export interface ChatRoom {
-    id: number;
     name: string;
-    lastActive: Date;
 }
 
 export interface Message {
@@ -13,6 +11,5 @@ export interface Message {
 }
 
 export interface User {
-    id: number;
     username: string;
 }

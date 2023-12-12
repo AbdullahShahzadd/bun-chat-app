@@ -4,9 +4,9 @@ import {ChatRoom} from "../types";
 export const AvailableChatroom = ({chatroom}: {chatroom: ChatRoom}) => {
     return (
         <div
-            id={`${chatroom.id}`}
+            id={`${chatroom.name}`}
         >
-            <button hx-get={`/chatroom/${chatroom.id}`} hx-target="#chat-room" hx-swap="innerHTML">{chatroom.name}</button>
+            <button class="bg-sky-500" hx-get={`/chatroom/${chatroom.name}`} hx-target="#chat-room" hx-swap="innerHTML">{chatroom.name}</button>
         </div>
     )
 }

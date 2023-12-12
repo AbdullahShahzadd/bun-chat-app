@@ -12,7 +12,7 @@ export const ChatSubmit = ({chatRoom}: {chatRoom: string}) => {
               class="border-black border-solid border-2 rounded"
               name="message"
           />
-          <button type="submit">Send Message</button>
+          <button class="bg-sky-500" type="submit">Send Message</button>
         </form>
       </div>
   )

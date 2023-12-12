@@ -1,9 +1,15 @@
 import * as elements from "typed-html";
 import { AvailableChatroom } from "./availableChatroom";
 import { CreateChatroom } from "./createChatroom";
-import {ChatRoom} from "../types";
+import {ChatRoom, User} from "../types";
 
-export const AvailableChatrooms = ({chatrooms}: {chatrooms: ChatRoom[]}) => {
+export const AvailableChatrooms = ({
+    chatrooms, 
+    user
+}: {
+    chatrooms: ChatRoom[],
+    user: User,
+}) => {
     if (!chatrooms || chatrooms.length === 0) {
         chatrooms = []
     }
@@ -12,6 +18,7 @@ export const AvailableChatrooms = ({chatrooms}: {chatrooms: ChatRoom[]}) => {
         hx-ext="ws"
         ws-connect="/ws"
         >
+        <div>{user.username}</div>
         <h1>Available Chatrooms</h1>
             <div id="available-chatrooms">
             {chatrooms.map((chatroom) => <AvailableChatroom chatroom={chatroom}/>)}

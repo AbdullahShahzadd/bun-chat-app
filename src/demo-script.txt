@@ -1,0 +1,65 @@
+The goal of this project was to experiment with htmx, websockets,
+bun, and elysiajs. 
+
+When you think of htmx you have to think of it in comparison with
+the typical frontend framework of today such as React. With React
+you have a stateless server that connects to the database to fulfill
+the request from the frontend. The database is the state of the app.
+React creates a representation of a slice of the state of the 
+database in the frontend. So, now you have a duplication of the 
+state. Sort of, the state of the database could change without
+the frontend knowing.
+
+The state in the FE allows or disallows actions, but the information
+to allow the action is still there, just hidden from the user.
+The idea of React is fairly straightforward. You represent the app
+in the React state. An action such as a get request will update
+the state which will in turn update the view. So, you have to 
+essentially update the state in the database which will in turn
+send information which will be used to update the state in the 
+FE.
+
+The duplication of state in the frontend isn't just an issue because
+of duplication. It is also an issue because it turns out that
+handling state is complicated and requires tooling such as redux.
+It isn't as simple as holding a global object that represents state,
+it needs actions and reducers.
+
+Wouldn't it be simpler to simply use the state in the database and
+just send html to the frontend?
+
+That is sort of what htmx (hypertext with a little bit of ajax)
+offers. It is a simple and small FE
+framework that allows you to display html in the frontend. It is 
+similar to React in that you can update parts of the FE instead of
+the whole page. It listens to js events to make ajax calls to 
+get a html fragment and inserts the response html fragment 
+into the dom.
+
+With htmx the state of your app is stored in the database and represented
+in the frontend with html. An update such as a get request will 
+update the appropriate part of the page. No need to keep 3 representations
+of the state of your app and manage them.
+
+This also alleviates the need for separate teams to work on an application.
+Now everyone is fullstack. You don't need to wait for a FE dev
+to update the frontend because you haven't bothered to learn Redux.
+You can do it yourself, all of it. It's all there in one place.
+
+htmx isn't just for simple webapps, it can be used for complicated 
+apps that require a reactive FE.
+
+Here a french company replaced their 2 year React UI of their Saas
+product with htmx in a couple of months. Resulting in lowering their
+load time in the frontend and the whole team becoming fullstack, 
+although they had to let go of the FE dev.
+
+timestamp: 5:00. 14:20
+Technical result 18:00 22:00
+
+Here are some examples of websites that are written in htmx.
+https://www.nikevision.com/
+https://zorro.management/
+
+Here are some examples of UI using htmx
+https://htmx.org/examples/
