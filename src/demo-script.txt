@@ -1,5 +1,33 @@
-The goal of this project was to experiment with htmx, websockets,
-bun, and elysiajs. 
+I've been thinking of doing a side project for a while but just haven't found
+the time with work, family, and personal stuff going on.
+
+I wanted to do a chat app because I didn't have any experience with websockets
+so I thought this would be a great way to get to know them.
+
+Additionally I wanted to explore htmx, and this bun thing that everyone seems
+to be talking about. I also decided to toss in a new server library to try out
+since I've only used Express.
+
+This presentation will be mostly about htmx because I didn't find bun nor elysiajs too
+interesting and am really excited about what htmx brings to the table.
+
+But first let's talk about websockets briefly.
+Generally the FE sends a request to the BE and the BE sends a response. This 
+doesn't really give the BE a way to push a message to the FE. There is long polling
+where the FE holds a connection to the BE until BE responds, and then starts another
+long polling session.
+
+Enter the Websocket protocol. It keeps the connection open to the BE and allows 
+both parties to send a message. The FE sends a GET request to the BE with 
+an upgrade header, at which point the BE upgrades it and the connection is open.
+
+There are libraries that implement the websocket protocol and make this very smooth,
+so smooth that it seems trivial.  I found it easy to use and didn't feel
+like I understood the full power.
+So I decided to implement the websocket protocol 
+in a future project to truly understand it.
+
+Moving onto htmx.
 
 When you think of htmx you have to think of it in comparison with
 the typical frontend framework of today such as React. With React
@@ -28,7 +56,7 @@ it needs actions and reducers.
 Wouldn't it be simpler to simply use the state in the database and
 just send html to the frontend?
 
-That is sort of what htmx (hypertext with a little bit of ajax)
+That is sort of what htmx (everyone says something different so not sure what it stands for)
 offers. It is a simple and small FE
 framework that allows you to display html in the frontend. It is 
 similar to React in that you can update parts of the FE instead of
